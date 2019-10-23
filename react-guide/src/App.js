@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Person from './Person/Person';
 
 class App extends Component {
   render() {
@@ -8,6 +9,7 @@ class App extends Component {
       //Only one root element can be added i.e div in jsx
       <div className="App"> 
         <h1>Hi i m react app</h1>
+        <Person/>
       </div>
     );
    //JSX:-
