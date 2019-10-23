@@ -1,0 +1,11 @@
+create-react-app:-
+-------------------------
+->Install nodejs (https://nodejs.org/en/). Nodejs provides npm.
+
+->Then run command => npm install create-react-app -g (in mac or linux u use sudo npm install... to install globally). 
+
+->Then run => create-react-app react-guide --scripts-version 1.1.5 (folder structure of scripts version 1.1.5)
+ex:- C:\Study\Nandini\Basics\ReactBasics>create-react-app react-guide --scripts-version 1.1.5
+
+->Then run => npm start (it open the development server on a new tab(always run it so that it reflect on the server) n u can quit it by ctrl+c ).
+
