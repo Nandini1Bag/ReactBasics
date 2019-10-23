@@ -5,10 +5,13 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      //Only one root element can be added i.e div in jsx
+      <div className="App"> 
         <h1>Hi i m react app</h1>
       </div>
     );
+   //JSX:-
+   // return React.createElement('div',{className:'App'},React.createElement('h1',null,'does this work?'));
   }
 }
 
