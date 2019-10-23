@@ -1,5 +1,25 @@
 git:-
 ------------
+
+1)New Repository and get that:-
+------------------------------
 ->create a new repository.
 ->install git in windows or mac(xcode).
 ->then git clone that repository(then create react app).
+
+2)Configuration:-
+-------------------
+->git config --global user.name "John Doe"
+->git config --global user.email johndoe@example.com
+You can use git config --list, or look at your ~/.gitconfig file. 
+The local configuration will be in your repository's .git/config file.
+
+3)checking in changes:-
+--------------------------
+->add gitignore file(ex:- /node_modules for ignoring node_modules folder)
+->git status (to check changes)
+->git add * (to add changes)
+->git status to see the chages in red.
+->git commit -m "message"(ex:-git commit -m "basic app added.") 
+->git push(check changes in the git)
+
