@@ -9,7 +9,8 @@ class App extends Component {
       //Only one root element can be added i.e div in jsx
       <div className="App"> 
         <h1>Hi i m react app</h1>
-        <Person/>
+        <Person name="max" age="30"/>
+        <Person name="lili" age="20" >N my hobbies:racing</Person>/>
       </div>
     );
    //JSX:-
