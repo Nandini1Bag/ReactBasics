@@ -30,13 +30,23 @@ class App extends Component {
   }
 
   render() {
+
+    const style={
+      backgroundColor:'white',
+      font:'inherit',
+      border:'1px solid blue',
+      padding :'8px',
+      cursor:'pointer'
+    };
+     
+
     return (
       //Only one root element can be added i.e div in jsx
       //donot add () in the function call i.e switchNameHandler (we only want to send a reference)
       //other wise it will be called as soon as it renders.
       <div className="App"> 
         <h1>Hi i m react app</h1>
-        <button onClick={()=>this.switchNameHandler('nandini')}>Switch name</button>
+        <button style={style} onClick={()=>this.switchNameHandler('nandini')}>Switch name</button>
         <Person 
         name={this.state.persons[0].name} 
         age={this.state.persons[0].age}/>
