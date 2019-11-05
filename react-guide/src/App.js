@@ -10,7 +10,8 @@ class App extends Component {
       {name:'maxmillian' ,age : 20},
       {name: 'tina',age:32}
     ],
-    otherstate:'some value'
+    otherstate:'some value',
+    showPersons:false
   }
 
   switchNameHandler=(Newname)=>{
@@ -27,6 +28,11 @@ class App extends Component {
       {name: 'max',age : 20},
       {name: event.target.value,age:32}
     ]})
+  }
+
+  togglePersonsHandler=()=>{
+   const doesShow=this.state.showPersons;
+   this.setState({showPersons: !doesShow});
   }
 
   render() {
@@ -46,7 +52,10 @@ class App extends Component {
       //other wise it will be called as soon as it renders.
       <div className="App"> 
         <h1>Hi i m react app</h1>
-        <button style={style} onClick={()=>this.switchNameHandler('nandini')}>Switch name</button>
+        <button style={style} onClick={this.togglePersonsHandler}>Toggle Persons</button>
+        {
+        this.state.showPersons ?
+        <div>
         <Person 
         name={this.state.persons[0].name} 
         age={this.state.persons[0].age}/>
@@ -55,6 +64,8 @@ class App extends Component {
         age={this.state.persons[1].age} 
         changed={this.nameChangeHandler}
         click={this.switchNameHandler.bind(this,'max')}>N my hobbies:racing</Person>
+        </div>:null
+        }
       </div>
     );
    //JSX:-
