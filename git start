@@ -23,3 +23,20 @@ The local configuration will be in your repository's .git/config file.
 ->git commit -m "message"(ex:-git commit -m "basic app added.") 
 ->git push(check changes in the git)
 
+4)Creating Branch from master:-
+-------------------------------
+-> Create the branch on your local machine and switch in this branch(Switched to a new branch 'ReactListsNConditionals') :-
+     ex:-  git checkout -b ReactListsNConditionals 
+-> update the README file(only one file added i.e readme file):-
+     ex:-git add README.md
+->git commit -m "add a detailed description"
+->git push --set-upstream origin ReactListsNConditionals
+->now check in github.
+
+5)clone a specific branch in git:-
+------------------------------------
+->git clone -b <branch> <remote_repo>
+   ex:-git clone -b ReactListsNConditionals https://github.com/Nandini1Bag/ReactBasics.git
+
+
+
