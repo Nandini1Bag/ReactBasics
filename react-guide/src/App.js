@@ -7,8 +7,8 @@ class App extends Component {
  
   state={
     persons:[
-      {name:'maxmillian' ,age : 20},
-      {name: 'tina',age:32}
+      {id:'lkj' , name:'maxmillian' ,age : 20},
+      {id:'hgf',name: 'tina',age:32}
     ],
     otherstate:'some value',
     showPersons:false
@@ -30,7 +30,6 @@ class App extends Component {
     // [ 'C', 'O', 'D', 'E', 'B', 'U', 'R', 'S', 'T' ]
     persons.splice(personIndex,1);
     this.setState({persons:persons})
-
   }
 
   //Two Way Binding example:-
@@ -63,7 +62,8 @@ persons=(<div>
   return <Person
           click={()=>this.deletepersonHandler(index)} 
           name={person.name}  
-          age={person.age}/>
+          age={person.age}
+          key={person.id}/>
   })}
   </div>);
 }
