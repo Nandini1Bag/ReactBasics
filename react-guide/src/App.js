@@ -15,7 +15,19 @@ class App extends Component {
   }
 
   deletepersonHandler=(personIndex)=>{
-    const persons=this.state.persons;
+    // const persons=this.state.persons; Wrong approach.
+    //Objects and array are reference type.
+    //Above persons is a pointer.
+    //good approach is ceate a copy of the array before manupulating it.
+
+    //Correct approach:-
+    // const persons=this.state.persons.slice(); //1st method
+    const persons=[...this.state.persons]; //spread operator(2nd method)
+    //The spread operator allows an iterable to spread or expand individually inside a receiver.
+    //Iterables are anything that can be looped over such as strings, arrays, and sets. 
+    //ex:-const codeburst = 'CODEBURST'; // Line 1
+    //const characters = [ ...codeburst ]; // Line 2
+    // [ 'C', 'O', 'D', 'E', 'B', 'U', 'R', 'S', 'T' ]
     persons.splice(personIndex,1);
     this.setState({persons:persons})
 
