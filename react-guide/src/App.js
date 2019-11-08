@@ -14,12 +14,11 @@ class App extends Component {
     showPersons:false
   }
 
-  switchNameHandler=(Newname)=>{
-  //this.state.persons[0].name="";  wrong
-  this.setState({ persons:[
-    {name:Newname ,age : 20},
-    {name: 'tina',age:32}
-  ]})
+  deletepersonHandler=(personIndex)=>{
+    const persons=this.state.persons;
+    persons.splice(personIndex,1);
+    this.setState({persons:persons})
+
   }
 
   //Two Way Binding example:-
@@ -48,8 +47,11 @@ class App extends Component {
 let persons=null;
 if(this.state.showPersons){
 persons=(<div>
-  {this.state.persons.map(person=>{
-  return <Person>name={person.name}  age={person.age}</Person>
+  {this.state.persons.map((person,index)=>{
+  return <Person
+          click={()=>this.deletepersonHandler(index)} 
+          name={person.name}  
+          age={person.age}/>
   })}
   </div>);
 }
