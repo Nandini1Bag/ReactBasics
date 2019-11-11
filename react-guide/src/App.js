@@ -33,11 +33,19 @@ class App extends Component {
   }
 
   //Two Way Binding example:-
-  nameChangeHandler=(event)=>{
-    this.setState({ persons:[
-      {name: 'max',age : 20},
-      {name: event.target.value,age:32}
-    ]})
+  nameChangeHandler=(event,id)=>{
+  const personindex=this.state.persons.findIndex(p=>{
+  return p.id ===id;
+  });
+
+  const person=[...this.state.persons[personindex]];
+
+  person.name=event.target.value;
+
+  const persons=[...this.state.persons];
+  persons[personindex]=person;
+
+  this.setState({ persons:persons});
   }
 
   togglePersonsHandler=()=>{
@@ -63,7 +71,8 @@ persons=(<div>
           click={()=>this.deletepersonHandler(index)} 
           name={person.name}  
           age={person.age}
-          key={person.id}/>
+          key={person.id}
+          changed={(event)=>this.nameChangeHandler(event,person.id)}/>
   })}
   </div>);
 }
