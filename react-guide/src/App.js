@@ -56,7 +56,8 @@ class App extends Component {
   render() {
 
     const style={
-      backgroundColor:'white',
+      backgroundColor:'Green',
+      color:'white',
       font:'inherit',
       border:'1px solid blue',
       padding :'8px',
@@ -75,6 +76,7 @@ persons=(<div>
           changed={(event)=>this.nameChangeHandler(event,person.id)}/>
   })}
   </div>);
+  style.backgroundColor='red';
 }
     return (
       //Only one root element can be added i.e div in jsx
