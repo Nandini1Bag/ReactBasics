@@ -8,7 +8,8 @@ class App extends Component {
   state={
     persons:[
       {id:'lkj' , name:'maxmillian' ,age : 20},
-      {id:'hgf',name: 'tina',age:32}
+      {id:'hgf',name: 'tina',age:32},
+      {id:'dss',name: 'nini',age:27}
     ],
     otherstate:'some value',
     showPersons:false
@@ -78,12 +79,21 @@ persons=(<div>
   </div>);
   style.backgroundColor='red';
 }
+
+ const classes=[];
+ if (this.state.persons.length <= 2){
+  classes.push('red'); //classes=['red']
+ }
+ if (this.state.persons.length <= 1){
+  classes.push('bold'); //classes=['red','bold']
+ }
     return (
       //Only one root element can be added i.e div in jsx
       //donot add () in the function call i.e switchNameHandler (we only want to send a reference)
       //other wise it will be called as soon as it renders.
       <div className="App"> 
         <h1>Hi i m react app</h1>
+        <p className={classes.join(' ')}>Its really working.</p>
         <button style={style} onClick={this.togglePersonsHandler}>Toggle Persons</button>
         {persons}
       </div>
