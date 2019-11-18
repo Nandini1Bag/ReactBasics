@@ -15,3 +15,9 @@ Features:-
 ->Automatic vendor prefixing
 ->Keyframes animation helper
 ->ES6 class and createClass support
+
+Media queries:-
+media queries are a popular technique for delivering a tailored style sheet to desktops,
+laptops, tablets, and mobile phones (such as iPhone and Android phones).
+
+(*)Refer css.tricks for more details.
