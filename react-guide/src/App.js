@@ -1,6 +1,7 @@
 import React, { Component , useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Radium from 'radium';
 import Person from './Person/Person';
 
 class App extends Component {
@@ -62,7 +63,11 @@ class App extends Component {
       font:'inherit',
       border:'1px solid blue',
       padding :'8px',
-      cursor:'pointer'
+      cursor:'pointer',
+      ':hover':{
+        backgroundColor:'Lightgreen',
+      color:'black',
+      }
     };
      
 let persons=null;
@@ -78,6 +83,10 @@ persons=(<div>
   })}
   </div>);
   style.backgroundColor='red';
+  style[':hover']={
+    backgroundColor:'Lightred',
+  color:'black',
+  };
 }
 
  const classes=[];
@@ -103,7 +112,7 @@ persons=(<div>
   }
 }
 
-export default App;
+export default Radium(App);
 
 //----------------------------------------------------------------
 //React hooks Example below
