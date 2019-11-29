@@ -1,7 +1,6 @@
 import React, { Component , useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Radium,{ StyleRoot } from 'radium';
 import Person from './Person/Person';
 
 class App extends Component {
@@ -100,21 +99,21 @@ persons=(<div>
       //Only one root element can be added i.e div in jsx
       //donot add () in the function call i.e switchNameHandler (we only want to send a reference)
       //other wise it will be called as soon as it renders.
-      <StyleRoot>
+   
         <div className="App"> 
         <h1>Hi i m react app</h1>
         <p className={classes.join(' ')}>Its really working.</p>
         <button style={style} onClick={this.togglePersonsHandler}>Toggle Persons</button>
         {persons}
       </div>
-      </StyleRoot>
+  
      );
    //JSX:-
    // return React.createElement('div',{className:'App'},React.createElement('h1',null,'does this work?'));
   }
 }
 
-export default Radium(App);
+export default App;
 
 //----------------------------------------------------------------
 //React hooks Example below
