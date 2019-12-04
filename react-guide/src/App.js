@@ -7,7 +7,7 @@ import Person from './Person/Person';
 
 
 const StyledButton=styled.button`
-background-color:Green;
+background-color:${props=>props.alt ? 'red' :'green'};
 color:white;
 font:inherit;
 border:1px solid blue;
@@ -15,7 +15,7 @@ padding :8px;
 cursor:pointer;
 
 &:hover{
-  background-color:Lightgreen;
+  background-color:${props=>props.alt ? 'salmon' :'lightgreen'};
 color:black;
 `;
 
@@ -97,11 +97,12 @@ persons=(<div>
           changed={(event)=>this.nameChangeHandler(event,person.id)}/>
   })}
   </div>);
-  style.backgroundColor='red';
-  style[':hover']={
-    backgroundColor:'Lightred',
-  color:'black',
-  };
+  
+  // style.backgroundColor='red';
+  // style[':hover']={
+  //   backgroundColor:'Lightred',
+  // color:'black',
+  // };
 }
 
  const classes=[];
@@ -119,7 +120,7 @@ persons=(<div>
         <div className="App"> 
         <h1>Hi i m react app</h1>
         <p className={classes.join(' ')}>Its really working.</p>
-        <StyledButton  onClick={this.togglePersonsHandler}>
+        <StyledButton alt={this.state.showPersons} onClick={this.togglePersonsHandler}>
           Toggle Persons
         </StyledButton>
         {persons}

@@ -1,0 +1,9 @@
+Style cooponent library:-
+-----------------------------------
+
+=>Installation:-
+To download styled-components run:
+
+npm install --save styled-components (in terminal of vscode)
+
+More details on https://www.styled-components.com/
