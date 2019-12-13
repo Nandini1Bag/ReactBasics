@@ -1,6 +1,5 @@
 import React, { Component , useState} from 'react';
-import logo from './logo.svg';
-import './App.css';
+import classes from './App.css';
 import Person from './Person/Person';
 
 
@@ -90,12 +89,12 @@ persons=(<div>
   // };
 }
 
- const classes=[];
+ const Assignedclasses=[];
  if (this.state.persons.length <= 2){
-  classes.push('red'); //classes=['red']
+  Assignedclasses.push(classes.red); //classes=['red']
  }
  if (this.state.persons.length <= 1){
-  classes.push('bold'); //classes=['red','bold']
+  Assignedclasses.push(classes.bold); //classes=['red','bold']
  }
     return (
       //Only one root element can be added i.e div in jsx
@@ -104,8 +103,8 @@ persons=(<div>
    
         <div className="App"> 
         <h1>Hi i m react app</h1>
-        <p className={classes.join(' ')}>Its really working.</p>
-        <button>
+        <p className={Assignedclasses.join(' ')}>Its really working.</p>
+        <button className="Button" onClick={this.togglePersonsHandler}>
           Toggle Persons
         </button>
         {persons}
