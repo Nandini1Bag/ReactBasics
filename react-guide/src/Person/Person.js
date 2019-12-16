@@ -18,6 +18,11 @@ const StyledDiv=styled.div`
 
 
 const person = (props) => {
+const rnd=Math.random();
+if (rnd>0.7){
+    throw new Error('something wrong');    
+}
+
 return (   
     <StyledDiv>
         <p onClick={props.click}> I am {props.name} and i m {props.age} years old.</p>

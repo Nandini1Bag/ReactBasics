@@ -1,0 +1,6 @@
+React Developer Tools:-
+-----------------------
+React Developer Tools (Devtools for short) is a browser extension for Chrome and Firefox that provides an extra set of 
+React-specific inspection widgets to assist you with development. 
+By installing React Devtools, you’ll get two main features: a view of the component tree and the current state 
+and props of each component you select and profiler.
