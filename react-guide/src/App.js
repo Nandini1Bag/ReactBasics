@@ -1,7 +1,6 @@
 import React, { Component , useState} from 'react';
 import classes from './App.css';
 import Person from './Person/Person';
-import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 
 class App extends Component {
  
@@ -55,46 +54,33 @@ class App extends Component {
   }
 
   render() {
+    let btnClass='';
+    let persons=null;
 
-    const style={
-      backgroundColor:'Green',
-      color:'white',
-      font:'inherit',
-      border:'1px solid blue',
-      padding :'8px',
-      cursor:'pointer',
-      ':hover':{
-        backgroundColor:'Lightgreen',
-      color:'black',
-      }
-    };
-     
-let persons=null;
 if(this.state.showPersons){
 persons=(<div>
   {this.state.persons.map((person,index)=>{
-  return <ErrorBoundary> key={person.id}
-         <Person
+  return <Person
           click={()=>this.deletepersonHandler(index)} 
           name={person.name}  
-          age={person.age}       
-          changed={(event)=>this.nameChangeHandler(event,person.id)}/></ErrorBoundary>
+          age={person.age}  
+          key={person.id}     
+          changed={(event)=>this.nameChangeHandler(event,person.id)}/>
   })}
   </div>);
   
-  // style.backgroundColor='red';
-  // style[':hover']={
-  //   backgroundColor:'Lightred',
-  // color:'black',
-  // };
+  btnClass='ButtonRed'; 
+}
+else{
+   btnClass='Button';
 }
 
  const Assignedclasses=[];
  if (this.state.persons.length <= 2){
-  Assignedclasses.push(classes.red); //classes=['red']
+  Assignedclasses.push('red'); //classes=['red']
  }
  if (this.state.persons.length <= 1){
-  Assignedclasses.push(classes.bold); //classes=['red','bold']
+  Assignedclasses.push('bold'); //classes=['red','bold']
  }
     return (
       //Only one root element can be added i.e div in jsx
@@ -104,7 +90,7 @@ persons=(<div>
         <div className="App"> 
         <h1>Hi i m react app</h1>
         <p className={Assignedclasses.join(' ')}>Its really working.</p>
-        <button className="Button" onClick={this.togglePersonsHandler}>
+        <button className={btnClass} onClick={this.togglePersonsHandler}>
           Toggle Persons
         </button>
         {persons}

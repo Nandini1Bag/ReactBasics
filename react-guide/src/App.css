@@ -23,3 +23,17 @@ cursor:pointer;
   background-color:lightgreen;
   color:black;
 }
+
+.ButtonRed{
+background-color: red;
+color:white;
+font:inherit;
+border:1px solid blue;
+padding :8px;
+cursor:pointer;
+}
+
+.ButtonRed:hover{
+  background-color: salmon;
+  color: black;
+}
