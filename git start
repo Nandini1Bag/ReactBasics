@@ -27,6 +27,7 @@ The local configuration will be in your repository's .git/config file.
 -------------------------------
 -> Create the branch on your local machine and switch in this branch(Switched to a new branch 'ReactListsNConditionals') :-
      ex:-  git checkout -b ReactListsNConditionals 
+	 git checkout :-it allows you to switch (and even create) local branches
 -> update the README file(only one file added i.e readme file):-
      ex:-git add README.md
 ->git commit -m "add a detailed description"
