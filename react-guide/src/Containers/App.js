@@ -1,6 +1,7 @@
 import React, { Component , useState} from 'react';
 import classes from './App.css';
-import Person from '../Components/Persons/Person/Person';
+import Persons from '../Components/Persons/Persons';
+import Cockpit from '../Components/Cockpit/Cockpit';
 
 class App extends Component {
  
@@ -54,51 +55,27 @@ class App extends Component {
   }
 
   render() {
-    let btnClass='';
     let persons=null;
 
 if(this.state.showPersons){
-persons=(<div>
-  {this.state.persons.map((person,index)=>{
-  return <Person
-          click={()=>this.deletepersonHandler(index)} 
-          name={person.name}  
-          age={person.age}  
-          key={person.id}     
-          changed={(event)=>this.nameChangeHandler(event,person.id)}/>
-  })}
-  </div>);
-  
-  btnClass='ButtonRed'; 
-}
-else{
-   btnClass='Button';
+persons=(
+  <Persons 
+   persons={this.state.persons} 
+   changed={this.nameChangeHandler}
+   clicked={this.deletepersonHandler}/>); 
 }
 
- const Assignedclasses=[];
- if (this.state.persons.length <= 2){
-  Assignedclasses.push('red'); //classes=['red']
- }
- if (this.state.persons.length <= 1){
-  Assignedclasses.push('bold'); //classes=['red','bold']
- }
     return (
-      //Only one root element can be added i.e div in jsx
-      //donot add () in the function call i.e switchNameHandler (we only want to send a reference)
-      //other wise it will be called as soon as it renders.
-   
         <div className="App"> 
-        <h1>Hi i m react app</h1>
-        <p className={Assignedclasses.join(' ')}>Its really working.</p>
-        <button className={btnClass} onClick={this.togglePersonsHandler}>
-          Toggle Persons
-        </button>
+        <Cockpit 
+        showPersons={this.state.showPersons}
+        persons={this.state.persons}
+        clicked={this.togglePersonsHandler}
+        />
         {persons}
       </div>
   
      );
-   //JSX:-
-   // return React.createElement('div',{className:'App'},React.createElement('h1',null,'does this work?'));
   }
 }
 
