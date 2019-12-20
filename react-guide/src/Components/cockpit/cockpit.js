@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './Cockpit.css';
+import  './Cockpit.css';
 
 const Cockpit=(props)=>{
     let btnClass='';

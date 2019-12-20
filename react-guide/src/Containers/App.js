@@ -1,5 +1,5 @@
-import React, { Component , useState} from 'react';
-import classes from './App.css';
+import React, { Component } from 'react';
+import './App.css';
 import Persons from '../Components/Persons/Persons';
 import Cockpit from '../Components/Cockpit/Cockpit';
 
