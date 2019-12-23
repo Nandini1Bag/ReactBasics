@@ -31,6 +31,16 @@ class App extends Component {
     console.log('componentdidmount');
   }
 
+shouldComponentUpdate(nextProps,nextState){
+  console.log('[App.js] shouldComponentUpdate');
+  return true;
+}
+
+componentDidUpdate(){
+  console.log('[App.js] componentDidUpdate'); 
+}
+
+
   deletepersonHandler=(personIndex)=>{
     // const persons=this.state.persons; Wrong approach.
     //Objects and array are reference type.
