@@ -33,6 +33,11 @@ componentDidUpdate(prevProps,prevState,Snapshot){
         console.log(Snapshot) ;   
 }
 
+componentWillUnmount(){
+        console.log('[Persons.js] componentWillUnmount');   
+        //cleanup can be done here.    
+}
+
 render(){
         console.log('[Persons.js] is rendering');
         return this.props.persons.map((person,index)=>{

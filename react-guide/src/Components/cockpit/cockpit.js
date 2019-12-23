@@ -2,14 +2,29 @@ import React ,{useEffect} from 'react';
 import  './Cockpit.css';
 
 const Cockpit=(props)=>{
+
     useEffect(()=>{
     console.log('[Cockpit.js] useeffect');
     //Http request....
     setTimeout(() => {
        alert('Data saved to cloud!'); 
     }, 1000);
+    
+    return ()=>{
+        console.log('[Cockpit.js] cleanup work in useEffect');   
+    }
+
     },[]); //Note:-Just pass empty array as 2nd argument to useEffect function and it will work 
            //same as Componentdidmount.  
+
+
+   useEffect(()=>{
+    console.log('[Cockpit.js] 2nd useeffect');
+    return ()=>{
+        console.log('[Cockpit.js] cleanup work in 2nd useEffect');   
+    }    
+   });
+
 
     let btnClass='';
     if(props.showPersons){
