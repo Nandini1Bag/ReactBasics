@@ -5,7 +5,11 @@ const Cockpit=(props)=>{
     useEffect(()=>{
     console.log('[Cockpit.js] useeffect');
     //Http request....
-    });
+    setTimeout(() => {
+       alert('Data saved to cloud!'); 
+    }, 1000);
+    },[]); //Note:-Just pass empty array as 2nd argument to useEffect function and it will work 
+           //same as Componentdidmount.  
 
     let btnClass='';
     if(props.showPersons){
