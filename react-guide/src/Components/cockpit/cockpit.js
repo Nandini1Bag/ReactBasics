@@ -1,7 +1,12 @@
-import React from 'react';
+import React ,{useEffect} from 'react';
 import  './Cockpit.css';
 
 const Cockpit=(props)=>{
+    useEffect(()=>{
+    console.log('[Cockpit.js] useeffect');
+    //Http request....
+    });
+
     let btnClass='';
     if(props.showPersons){
         btnClass='ButtonRed'; 
