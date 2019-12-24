@@ -36,10 +36,10 @@ const Cockpit=(props)=>{
     };
 
     const Assignedclasses=[];
-    if (props.persons.length <= 2){
+    if (props.personsLength <= 2){
      Assignedclasses.push('red'); //classes=['red']
     }
-    if (props.persons.length <= 1){
+    if (props.personsLength <= 1){
      Assignedclasses.push('bold'); //classes=['red','bold']
     }
     return(
@@ -54,5 +54,8 @@ const Cockpit=(props)=>{
     );
 };
 
+//React.memo is a higher order component that memoizes the result of a function component. 
+//If a component returns the same result given the same props, wrapping it in memo can
+//result in a performance boost.
 
-export default Cockpit;
+export default React.memo(Cockpit);
