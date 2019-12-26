@@ -1,4 +1,5 @@
 import React ,{Component}from 'react';
+import Auxillary from '../../../hoc/Auxillary';
 import styled from 'styled-components';
 //import './Person.css';
 
@@ -20,13 +21,13 @@ class Person extends Component {
     render(){
         console.log('[Person.js] is rendering...')
         return (   
-            <StyledDiv>
+            <Auxillary>
                 <p onClick={this.props.click}> I am {this.props.name} and i m {this.props.age} years old.</p>
                 <p>{this.props.children}</p>
                 <input type="text" 
                 onChange={this.props.changed} 
                 value={this.props.name}/>
-            </StyledDiv>
+            </Auxillary>
         
         )
     }
