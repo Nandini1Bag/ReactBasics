@@ -1,7 +1,8 @@
 import React ,{Component,Fragment}from 'react';
 import Auxillary from '../../../hoc/Auxillary';
+import withClass from '../../../hoc/withClass';
 import styled from 'styled-components';
-//import './Person.css';
+import './Person.css';
 
 
 const StyledDiv=styled.div`
@@ -37,5 +38,5 @@ class Person extends Component {
     }
 }
 
-export default Person;
+export default withClass(Person,'Person');
 
