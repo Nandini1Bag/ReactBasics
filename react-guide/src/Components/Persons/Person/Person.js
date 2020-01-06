@@ -1,22 +1,7 @@
 import React ,{Component,Fragment}from 'react';
 import Auxillary from '../../../hoc/Auxillary';
 import withClass from '../../../hoc/withClass';
-import styled from 'styled-components';
 import './Person.css';
-
-
-const StyledDiv=styled.div`
-    width: 60%;
-    margin: 16px auto;
-    text-align: center;
-    padding: 16px;
-    box-shadow: 0 2px 3px #cccccc;
-    border: 1px solid #eeeeee;
-        
-     @media (min-width : 500px){
-            widows: 450px;
-    } 
-`;
 
 
 //Without an extra div element u can use a wrapper component i.e Auxillary 
